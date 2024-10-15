@@ -1,6 +1,7 @@
 <h1>Todo List</h1>
 <ul>
-{% for todo in todos %}
-<li>{{ todo.title }}</li>
+{% for entendendo2_list in entendendo2 %}
+<li>{{ entendendo2_list.title }}</li>
 {% endfor %}
 </ul>
+<a href="{% url 'todo_create' %}">Nova Tarefa</a>

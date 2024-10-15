@@ -18,11 +18,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from entendendo2.views import entendendo2_list
+from entendendo2.views import home
+from entendendo2.views import TodoListView
+from entendendo2.views import TodoCreateView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", entendendo2_list),
-]
+    path("home/", home),
+    path("", TodoListView.as_view(), name="entendendo2_list"),
+    path("create/", TodoCreateView.as_view(), name="todo_create")
+    ]
 
-from entendendo2.views import entendendo2_list
-urlpatterns = [path("admin/", admin.site.urls), path("", entendendo2_list)]
+
