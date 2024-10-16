@@ -21,13 +21,19 @@ from entendendo2.views import entendendo2_list
 from entendendo2.views import home
 from entendendo2.views import TodoListView
 from entendendo2.views import TodoCreateView
+from entendendo2.views import TodoUpdateView
+from entendendo2.views import TodoDeleteView
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", entendendo2_list),
     path("home/", home),
     path("", TodoListView.as_view(), name="entendendo2_list"),
-    path("create/", TodoCreateView.as_view(), name="todo_create")
+    path("create/", TodoCreateView.as_view(), name="todo_create"),
+    path("update/<int:pk>", TodoUpdateView.as_view(), name="todo_update"),
+    path("delete/<int:pk>", TodoDeleteView.as_view(), name="todo_delete")
+
     ]
 
 
